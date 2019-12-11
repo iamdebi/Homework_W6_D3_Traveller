@@ -10,13 +10,13 @@ Traveller.prototype.getJourneyStartLocations = function() {
 
 Traveller.prototype.getJourneyEndLocations = function() {
   return this.journeys.map(journey => {
-    return journey.endLocations;
+    return journey.endLocation;
   });
 };
 
 Traveller.prototype.getJourneysByTransport = function(transport) {
-  return this.journeys.map(journey => {
-    return journey.transport;
+  return this.journeys.filter(journey => {
+    return journey.transport === transport;
   });
 };
 
